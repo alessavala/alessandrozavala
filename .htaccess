@@ -1,4 +1,4 @@
-DirectoryIndex index.html
+DirectoryIndex index.html index.php
 # Evitar que la caché del servidor muestre versiones viejas de las páginas
 <IfModule LiteSpeed>
 CacheLookup off
