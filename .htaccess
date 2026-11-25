@@ -1,4 +1,13 @@
 DirectoryIndex index.html
+# Evitar que la caché del servidor muestre versiones viejas de las páginas
+<IfModule LiteSpeed>
+CacheLookup off
+</IfModule>
+<IfModule mod_headers.c>
+<FilesMatch "\.(html|xml|txt)$">
+Header set Cache-Control "no-cache, must-revalidate"
+</FilesMatch>
+</IfModule>
 ErrorDocument 404 /404.html
 RewriteEngine On
 # Redirección a HTTPS desactivada temporalmente hasta que Hostinger active el certificado SSL
