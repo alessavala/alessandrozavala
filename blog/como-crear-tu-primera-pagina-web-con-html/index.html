@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cómo crear tu primera página web con HTML paso a paso | César Alessandro Zavala</title><meta name="description" content="Un proyecto completo para principiantes: la página de tu negocio con portada, servicios, ubicación y botón de WhatsApp, lista para subir a internet."><link rel="canonical" href="https://www.alessandrozavala.com/blog/como-crear-tu-primera-pagina-web-con-html/">
+<meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#0a1f44">
+<meta property="og:type" content="website"><meta property="og:title" content="Cómo crear tu primera página web con HTML paso a paso | César Alessandro Zavala"><meta property="og:description" content="Un proyecto completo para principiantes: la página de tu negocio con portada, servicios, ubicación y botón de WhatsApp, lista para subir a internet.">
+<meta property="og:url" content="https://www.alessandrozavala.com/blog/como-crear-tu-primera-pagina-web-con-html/"><meta property="og:image" content="https://www.alessandrozavala.com/img/blog/como-crear-tu-primera-pagina-web-con-html.jpg"><meta property="og:locale" content="es_MX"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a1f44'/%3E%3Ccircle cx='46' cy='18' r='7' fill='%235ec8f2'/%3E%3C/svg%3E">
+<style>
+:root{--navy:#0a1f44;--navy2:#132d5e;--ink:#0f172a;--muted:#5b6b85;--sky:#5ec8f2;--sky2:#bfe9fb;--sky3:#eef9fe;--line:#dbe6f3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+a{color:var(--navy2)}img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header.top{position:sticky;top:0;z-index:10;background:rgba(10,31,68,.96);backdrop-filter:blur(8px)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{color:#fff;text-decoration:none;font-weight:800;letter-spacing:-.02em;font-size:1.15rem}.logo span{color:var(--sky)}
+nav a{color:#dbeafe;text-decoration:none;margin-left:22px;font-size:.95rem}nav a:hover{color:var(--sky)}
+.hero{background:radial-gradient(1200px 500px at 85% -10%,#1f4c8f 0,transparent 60%),linear-gradient(160deg,var(--navy) 0,#0d2a5a 100%);color:#fff;padding:96px 0 88px;overflow:hidden}
+.hero .eyebrow{display:inline-block;background:rgba(94,200,242,.15);color:var(--sky);border:1px solid rgba(94,200,242,.35);padding:6px 14px;border-radius:99px;font-size:.85rem;font-weight:600}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.3rem,5vw,3.8rem);line-height:1.08;margin:22px 0 18px;letter-spacing:-.02em;max-width:820px}
+.hero h1 em{color:var(--sky);font-style:normal}
+.hero .wrap{display:grid;grid-template-columns:1.35fr .9fr;gap:48px;align-items:center}.hero .me{position:relative}.hero .me img{width:100%;height:auto;border-radius:28px;border:4px solid rgba(94,200,242,.55);box-shadow:0 30px 60px rgba(0,0,0,.35);aspect-ratio:4/5;object-fit:cover;object-position:50% 40%}.hero .me span{position:absolute;left:-14px;bottom:24px;background:#fff;color:var(--navy);font-weight:700;font-size:.9rem;padding:10px 14px;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.hero p{font-size:1.2rem;color:#cfe3f7;max-width:660px;margin:0 0 30px}
+.btn{display:inline-block;background:var(--sky);color:var(--navy);font-weight:700;text-decoration:none;padding:14px 24px;border-radius:12px;margin:0 10px 10px 0}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}
+section{padding:72px 0}section h2.sec{font-family:Georgia,serif;font-size:2rem;color:var(--navy);margin:0 0 8px;letter-spacing:-.01em}
+.lead{color:var(--muted);margin:0 0 34px;max-width:680px}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.pillar{background:var(--sky3);border:1px solid var(--sky2);border-radius:18px;padding:26px}
+.pillar b{display:block;color:var(--navy);font-size:1.1rem;margin-bottom:6px}.pillar p{margin:0;color:var(--muted)}
+.pillar .n{display:inline-block;width:34px;height:34px;border-radius:10px;background:var(--navy);color:var(--sky);font-weight:800;text-align:center;line-height:34px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:26px}
+.card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(10,31,68,.12)}
+.card a{text-decoration:none;color:inherit}.card img{width:100%;aspect-ratio:16/9;object-fit:cover;height:auto}
+.card div{padding:18px 20px 22px}.card h3{margin:6px 0 8px;font-size:1.15rem;color:var(--navy);line-height:1.3}.card p{margin:0;color:var(--muted);font-size:.95rem}
+.tag{font-size:.78rem;font-weight:700;color:#0e7fb0;text-transform:uppercase;letter-spacing:.06em}
+.about{background:var(--navy);color:#e2edf9}.about .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center}
+.about h2.sec{color:#fff}.about .quote{font-family:Georgia,serif;font-size:1.6rem;line-height:1.35;color:var(--sky);border-left:4px solid var(--sky);padding-left:20px}
+.forwho{background:var(--sky3);border-bottom:1px solid var(--sky2)}.fw{max-width:820px}.forwho h2.sec{font-size:clamp(1.6rem,3vw,2.2rem)}.forwho p{font-size:1.12rem;color:#334155}.eyebrow2{font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#0e7fb0}.trip{background:#fff;border:1px dashed var(--sky);border-radius:14px;padding:14px 18px}
+.estudio{background:linear-gradient(150deg,#0d2a5a,var(--navy));color:#cfe3f7}.estudio .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center}.estudio ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}.estudio li{border:1px solid rgba(94,200,242,.45);color:#fff;border-radius:99px;padding:8px 14px;font-weight:600;font-size:.92rem}@media(max-width:760px){.estudio .wrap{grid-template-columns:1fr}}
+.edgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}.ed{display:block;border:1px solid var(--line);border-left:4px solid var(--sky);border-radius:12px;padding:16px 18px;text-decoration:none;color:var(--navy);font-weight:700;background:#fff}.ed:hover{background:var(--sky3)}.ed small{display:block;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:#0e7fb0;margin-bottom:4px}
+.vgrid{display:grid;grid-template-columns:1.6fr 1fr;gap:16px}.vside{display:grid;gap:12px}.yt,.ytf{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:16px;overflow:hidden;background:#000;cursor:pointer}.yt img{width:100%;height:100%;object-fit:cover;opacity:.85}.yt:hover img{opacity:1}.yt .play{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;background:var(--sky);color:var(--navy);font-size:26px;line-height:64px;text-align:center}.vside .yt .play{width:44px;height:44px;line-height:44px;font-size:18px}.yt .cap{position:absolute;left:0;right:0;bottom:0;padding:10px 14px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff;font-weight:700;text-align:left;font-size:.95rem}@media(max-width:760px){.vgrid{grid-template-columns:1fr}}
+.cbtns{display:flex;gap:10px;margin-top:10px}.cbtns a{background:var(--navy);color:#fff!important;text-decoration:none;padding:7px 12px;border-radius:9px;font-size:.85rem;font-weight:700}.cbtns a+a{background:#25d366;color:#08311a!important}.wa{position:fixed;right:18px;bottom:18px;z-index:20;background:#25d366;color:#08311a;font-weight:800;text-decoration:none;padding:12px 16px;border-radius:99px;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.iggrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;align-items:start}
+.eco{background:var(--sky3)}.ecogrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}.ecocard{background:#fff;border:1px solid var(--sky2);border-radius:18px;padding:24px;display:flex;flex-direction:column}.ecocard.me{background:var(--navy);color:#cfe3f7;border-color:var(--navy)}.ecocard small{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#0e7fb0}.ecocard.me small{color:var(--sky)}.ecocard h3{margin:6px 0 8px;color:var(--navy);font-size:1.3rem}.ecocard.me h3{color:#fff}.ecocard p{color:var(--muted);flex:1}.ecocard.me p{color:#cfe3f7}.ecocard a{font-weight:700;color:#0e7fb0;text-decoration:none}.ecocard.me a{color:var(--sky)}.ecoburger{margin-top:20px;color:var(--muted)}
+.human .wrap{display:grid;grid-template-columns:.8fr 1.4fr;gap:44px;align-items:center}.human img{width:100%;height:auto;border-radius:22px;border:3px solid var(--sky2)}.human .cap{font-size:.85rem;color:var(--muted);margin-top:8px}@media(max-width:760px){.human .wrap{grid-template-columns:1fr}.human img{max-width:340px}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:26px}.stats div{background:rgba(94,200,242,.1);border:1px solid rgba(94,200,242,.3);border-radius:14px;padding:14px}.stats b{display:block;color:#fff;font-size:1.5rem}.stats span{font-size:.85rem;color:#bcd3ee}
+.allies{display:flex;flex-wrap:wrap;gap:14px}.allies a{border:1px solid var(--line);border-radius:14px;padding:14px 18px;text-decoration:none;color:var(--navy);font-weight:600;background:var(--sky3)}
+.allies a small{display:block;color:var(--muted);font-weight:400}
+footer{background:#081733;color:#9fb4d1;padding:40px 0;font-size:.9rem}footer a{color:var(--sky)}
+article.post{max-width:760px;margin:0 auto;padding:48px 22px 24px}
+.crumbs{font-size:.85rem;color:var(--muted)}.crumbs a{color:var(--muted)}
+article.post h1{font-family:Georgia,serif;font-size:clamp(2rem,4.2vw,2.8rem);line-height:1.15;color:var(--navy);margin:12px 0 14px;letter-spacing:-.015em}
+.dek{font-size:1.2rem;color:var(--muted);margin:0 0 18px}.meta{font-size:.9rem;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.meta b{color:var(--navy)}figure{margin:0 0 30px}figure img{border-radius:16px;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+figcaption{font-size:.78rem;color:var(--muted);margin-top:8px}
+.content{font-size:1.1rem}.content h2{font-family:Georgia,serif;color:var(--navy);font-size:1.65rem;margin:2.2em 0 .5em;padding-top:.2em;border-top:3px solid var(--sky2)}
+.content h3{color:var(--navy2);font-size:1.22rem;margin:1.6em 0 .4em}.content li{margin:.35em 0}.content strong{color:var(--navy)}
+.content pre{background:#0f172a;color:#e2e8f0;padding:16px 18px;border-radius:12px;overflow-x:auto;font-size:.88rem;line-height:1.5}.content code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.content a{color:#0e7fb0;text-decoration-thickness:2px;text-underline-offset:3px}
+.author{display:flex;gap:16px;align-items:center;background:var(--sky3);border:1px solid var(--sky2);border-radius:18px;padding:22px;margin:40px 0}
+.author .av{flex:none;width:64px;height:64px;border-radius:50%;border:3px solid var(--sky);object-fit:cover}.aboutpic{float:right;width:240px;margin:0 0 18px 26px;border-radius:20px;border:3px solid var(--sky2)}
+.author p{margin:0;color:var(--muted)}.author b{color:var(--navy)}
+.more{max-width:1120px;margin:0 auto;padding:10px 22px 70px}.more h2{font-family:Georgia,serif;color:var(--navy)}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}nav a[href="/#temas"],nav a[href="/#mis-sitios"],nav a[href="/#podcast"],nav a[href="/#instagram"]{display:none}.logo{font-size:1rem}.hero .me{max-width:320px}.aboutpic{float:none;width:100%;max-width:320px;margin:0 0 20px}nav a{margin-left:14px;font-size:.88rem}.about .wrap{grid-template-columns:1fr}.hero{padding:70px 0}section{padding:54px 0}}
+</style><meta property="article:published_time" content="2026-11-25T01:30:00-06:00"><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Cómo crear tu primera página web con HTML paso a paso", "description": "Un proyecto completo para principiantes: la página de tu negocio con portada, servicios, ubicación y botón de WhatsApp, lista para subir a internet.", "image": ["https://www.alessandrozavala.com/img/blog/como-crear-tu-primera-pagina-web-con-html.jpg"], "datePublished": "2026-11-25T01:30:00-06:00", "dateModified": "2026-11-25T01:30:00-06:00", "author": {"@type": "Person", "name": "César Alessandro Zavala", "url": "https://www.alessandrozavala.com/", "image": "https://www.alessandrozavala.com/img/cesar-zavala.jpg"}, "publisher": {"@type": "Person", "name": "César Alessandro Zavala", "url": "https://www.alessandrozavala.com/", "image": "https://www.alessandrozavala.com/img/cesar-zavala.jpg"}, "mainEntityOfPage": "https://www.alessandrozavala.com/blog/como-crear-tu-primera-pagina-web-con-html/", "inLanguage": "es-MX"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.alessandrozavala.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.alessandrozavala.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Cómo crear tu primera página web con HTML paso a paso", "item": "https://www.alessandrozavala.com/blog/como-crear-tu-primera-pagina-web-con-html/"}]}]}</script></head><body>
+<header class="top"><div class="wrap"><a class="logo" href="/">Alessandro<span>.</span>Zavala</a>
+<nav><a href="/blog/">Blog</a><a href="/#mis-sitios">Mis sitios</a><a href="/#podcast">Podcast</a><a href="/#instagram">Instagram</a><a href="/sobre-mi/">Sobre mí</a><a href="/#temas">Temas</a></nav></div></header>
+<main><article class="post"><div class="crumbs"><a href="/">Inicio</a> › <a href="/blog/">Blog</a> › Tutorial básico</div>
+<h1>Cómo crear tu primera página web con HTML paso a paso</h1><p class="dek">Un proyecto completo para principiantes: la página de tu negocio con portada, servicios, ubicación y botón de WhatsApp, lista para subir a internet.</p>
+<div class="meta"><span>Por <b>César Alessandro Zavala</b></span><span><time datetime="2026-11-25T01:30:00-06:00">25 de noviembre de 2026</time></span><span>8 min de lectura</span></div>
+<figure><img src="/img/blog/como-crear-tu-primera-pagina-web-con-html.jpg" alt="Cómo crear tu primera página web con HTML paso a paso" width="1200" height="675"></figure>
+<div class="content"><p>En esta guía vamos a construir juntos, de principio a fin, la página web de un negocio. No es un ejemplo abstracto: al final tendrás un archivo que puedes subir a internet con tu información. Uso como ejemplo una hamburguesería, pero puedes cambiar los textos por los de tu negocio.</p>
+<h2 id="lo-que-vas-a-construir">Lo que vas a construir</h2>
+<p>Una página de una sola sección larga, de las llamadas one page, con:</p>
+<ul><li>Encabezado con el nombre del negocio y un menú.</li><li>Portada con frase principal y botón de WhatsApp.</li><li>Sección de productos o servicios.</li><li>Sección de horarios y ubicación.</li><li>Pie de página con redes sociales.</li></ul>
+<p>Es exactamente lo que necesita un negocio local para empezar a recibir clientes desde Google.</p>
+<h2 id="paso-1-prepara-tu-carpeta">Paso 1: prepara tu carpeta</h2>
+<p>Crea en tu computadora una carpeta llamada mi-sitio. Dentro, crea un archivo llamado index.html y una carpeta llamada img para tus fotos. El nombre index.html es importante: es el archivo que los servidores muestran por defecto cuando alguien entra a tu dominio.</p>
+<p>Abre la carpeta con Visual Studio Code u otro editor de texto.</p>
+<h2 id="paso-2-el-esqueleto">Paso 2: el esqueleto</h2>
+<p>Copia esto en index.html:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es-MX"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Hamburguesas La Esquina | Tampico&lt;/title&gt;
+  &lt;meta name="description" content="Hamburguesas al carbón en Tampico. Pide a domicilio por WhatsApp."&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Guarda y abre el archivo con tu navegador. Verás una página en blanco, pero en la pestaña aparecerá el título. Ese título y la descripción son lo que Google mostrará en sus resultados, así que escríbelos pensando en lo que tu cliente buscaría.</p>
+<h2 id="paso-3-el-encabezado-y-el-men">Paso 3: el encabezado y el menú</h2>
+<p>Dentro de body agrega:</p>
+<pre><code>&lt;header&gt;
+  &lt;a href="#" class="logo"&gt;La Esquina&lt;/a&gt;
+  &lt;nav&gt;
+    &lt;a href="#menu"&gt;Menú&lt;/a&gt;
+    &lt;a href="#ubicacion"&gt;Ubicación&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+<p>Los enlaces que empiezan con almohadilla llevan a una sección de la misma página. Más adelante crearemos las secciones con esos nombres.</p>
+<h2 id="paso-4-la-portada">Paso 4: la portada</h2>
+<p>La portada es lo primero que se ve. Debe responder en segundos qué vendes, dónde y cómo pedir:</p>
+<pre><code>&lt;section class="portada"&gt;
+  &lt;h1&gt;Hamburguesas al carbón en Tampico&lt;/h1&gt;
+  &lt;p&gt;Carne 100% de res, pan artesanal y entrega en Tampico y Madero.&lt;/p&gt;
+  &lt;a class="boton" href="https://wa.me/521234567890?text=Hola,%20quiero%20pedir"&gt;Pedir por WhatsApp&lt;/a&gt;
+&lt;/section&gt;</code></pre>
+<p>Cambia el número por el tuyo con código de país, sin espacios ni signos. El texto después de text= es el mensaje que aparecerá escrito; los espacios se reemplazan por %20.</p>
+<h2 id="paso-5-los-productos">Paso 5: los productos</h2>
+<pre><code>&lt;section id="menu"&gt;
+  &lt;h2&gt;Nuestro menú&lt;/h2&gt;
+  &lt;div class="productos"&gt;
+    &lt;article&gt;
+      &lt;img src="img/clasica.jpg" alt="Hamburguesa clásica con queso" loading="lazy"&gt;
+      &lt;h3&gt;Clásica&lt;/h3&gt;
+      &lt;p&gt;Carne, queso, lechuga y tomate. $120&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;article&gt;
+      &lt;img src="img/doble.jpg" alt="Hamburguesa doble con tocino" loading="lazy"&gt;
+      &lt;h3&gt;Doble con tocino&lt;/h3&gt;
+      &lt;p&gt;Doble carne, tocino y queso. $160&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+<p>Fíjate en tres detalles: usamos h2 para el título de sección y h3 para cada producto, respetando la jerarquía; cada imagen tiene un texto alt descriptivo; y loading="lazy" hace que las imágenes se carguen sólo cuando el visitante se acerca a ellas, lo que acelera la página.</p>
+<h3>Prepara tus fotos</h3>
+<p>Antes de ponerlas en la carpeta img, redúcelas a unos 1,200 píxeles de ancho y comprímelas. Una foto directa del celular puede pesar varios megas y hacer lentísima tu página. Herramientas gratuitas como Squoosh lo hacen en segundos.</p>
+<h2 id="paso-6-ubicaci-n-y-horarios">Paso 6: ubicación y horarios</h2>
+<pre><code>&lt;section id="ubicacion"&gt;
+  &lt;h2&gt;Horarios y ubicación&lt;/h2&gt;
+  &lt;p&gt;Lunes a domingo de 1:00 p.m. a 11:00 p.m.&lt;/p&gt;
+  &lt;p&gt;Calle Ejemplo 123, Col. Centro, Tampico, Tamaulipas.&lt;/p&gt;
+  &lt;a href="https://maps.google.com/?q=Hamburguesas+La+Esquina+Tampico"&gt;Ver en Google Maps&lt;/a&gt;
+&lt;/section&gt;</code></pre>
+<p>Escribir tu dirección y tu ciudad en texto ayuda a que Google entienda dónde estás y te muestre en búsquedas locales.</p>
+<h2 id="paso-7-el-pie-de-p-gina">Paso 7: el pie de página</h2>
+<pre><code>&lt;footer&gt;
+  &lt;p&gt;Hamburguesas La Esquina · Tampico, Tamaulipas&lt;/p&gt;
+  &lt;a href="https://www.instagram.com/tu-cuenta"&gt;Instagram&lt;/a&gt;
+&lt;/footer&gt;</code></pre>
+<h2 id="paso-8-dale-estilo">Paso 8: dale estilo</h2>
+<p>Dentro del head, antes de cerrar, agrega una etiqueta style con este CSS básico:</p>
+<pre><code>&lt;style&gt;
+body { margin: 0; font-family: Arial, sans-serif; color: #222; }
+header { display: flex; justify-content: space-between; padding: 16px 24px; background: #111; }
+header a { color: white; text-decoration: none; margin-left: 16px; }
+.portada { padding: 80px 24px; text-align: center; background: #fff4e6; }
+.portada h1 { font-size: 42px; margin: 0 0 12px; }
+.boton { display: inline-block; background: #25d366; color: #fff; padding: 14px 24px; border-radius: 12px; text-decoration: none; font-weight: bold; }
+section { padding: 48px 24px; max-width: 1000px; margin: 0 auto; }
+.productos { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+.productos img { width: 100%; border-radius: 12px; }
+footer { background: #111; color: #ccc; padding: 24px; text-align: center; }
+footer a { color: #fff; }
+@media (max-width: 600px) { .portada h1 { font-size: 30px; } }
+&lt;/style&gt;</code></pre>
+<p>Guarda y recarga el navegador. Ya tienes una página que se ve profesional y se adapta al celular.</p>
+<h2 id="paso-9-rev-sala-como-cliente">Paso 9: revísala como cliente</h2>
+<p>Antes de publicarla, ábrela en tu celular y hazte estas preguntas:</p>
+<ul><li>¿Se entiende en cinco segundos qué vendo y dónde?</li><li>¿El botón de WhatsApp abre el chat con el mensaje correcto?</li><li>¿Las fotos cargan rápido?</li><li>¿La dirección y el horario están actualizados?</li><li>¿Hay faltas de ortografía?</li></ul>
+<p>Pídele a alguien de confianza que la revise también: siempre ven cosas que tú no.</p>
+<h2 id="paso-10-s-bela-a-internet">Paso 10: súbela a internet</h2>
+<p>Tienes varias opciones:</p>
+<ul><li>Subir la carpeta al administrador de archivos de tu hosting, dentro de public_html.</li><li>Usar GitHub con publicación automática, como explico en <a href="/blog/como-publicar-tu-sitio-con-github-y-hostinger/">cómo publicar tu sitio con GitHub y Hostinger</a>.</li><li>Usar servicios gratuitos para sitios estáticos mientras consigues tu dominio.</li></ul>
+<p>Después, da de alta tu sitio en Google Search Console y en tu perfil de Google Business.</p>
+<h2 id="c-mo-usar-la-ia-para-mejorarla">Cómo usar la IA para mejorarla</h2>
+<p>Ya que entiendes la estructura, la IA se vuelve una gran aliada. Puedes pedirle:</p>
+<ul><li>"Agrega una sección de preguntas frecuentes con este formato."</li><li>"Haz que el menú se convierta en un botón de hamburguesa en celulares."</li><li>"Revisa este HTML y dime si hay errores de accesibilidad o SEO."</li></ul>
+<p>Como ya sabes qué hace cada parte, vas a poder revisar lo que te propone.</p>
+<h2 id="agrega-lo-que-google-necesita-para-entender-tu-negocio">Agrega lo que Google necesita para entender tu negocio</h2>
+<p>Tu página ya funciona, pero puedes ayudar a Google a entenderla mejor con algunos detalles adicionales en el head.</p>
+<p>Primero, una imagen para redes sociales. Cuando alguien comparta tu página por WhatsApp o Facebook, se mostrará una tarjeta con foto. Para controlarla, agrega las etiquetas Open Graph: og:title con el nombre, og:description con una frase y og:image con la dirección completa de una foto de tu negocio. Si no las pones, la red social elige cualquier imagen o ninguna.</p>
+<p>Segundo, un ícono para la pestaña del navegador, llamado favicon. Basta con un archivo pequeño de tu logo y una etiqueta link en el head. Parece un detalle menor, pero hace que tu sitio se vea terminado.</p>
+<p>Tercero, los datos estructurados de negocio local. Son un bloque de código en formato JSON-LD que le dice a Google, de forma ordenada, tu nombre, dirección, teléfono, horario y tipo de negocio. No cambian lo que ve el visitante, pero ayudan a los buscadores a mostrar tu información con precisión. Te explico cómo crearlos en <a href="/blog/datos-estructurados-schema-para-principiantes/">datos estructurados para principiantes</a>.</p>
+<h2 id="mejora-la-portada-para-que-convierta">Mejora la portada para que convierta</h2>
+<p>La portada de una página de negocio tiene un solo trabajo: que el visitante haga algo. Revisa que cumpla estas condiciones:</p>
+<ul><li><strong>El título dice qué vendes y dónde.</strong> "Hamburguesas al carbón en Tampico" es mejor que "Bienvenidos".</li><li><strong>El subtítulo da una razón para elegirte.</strong> Ingredientes, rapidez, precio, zona de entrega o experiencia.</li><li><strong>Hay un solo botón principal.</strong> Si pones cinco botones, nadie sabe a cuál darle clic.</li><li><strong>El botón se ve sin hacer scroll en el celular.</strong> Prueba en un teléfono pequeño.</li><li><strong>Hay una foto real de tu producto.</strong> Las imágenes genéricas de bancos de fotos generan menos confianza.</li></ul>
+<p>Si tu negocio tiene reseñas en Google, puedes poner un enlace a ellas cerca del botón. La prueba social ayuda mucho a decidir.</p>
+<h2 id="organiza-el-proyecto-para-crecer">Organiza el proyecto para crecer</h2>
+<p>Cuando tu sitio tenga más de una página, conviene ordenar la carpeta desde el principio:</p>
+<ul><li>Una carpeta img para las imágenes, con nombres descriptivos como hamburguesa-clasica.jpg en lugar de IMG_4532.jpg.</li><li>Un archivo de estilos compartido para que todas las páginas se vean igual.</li><li>Una carpeta por página, con su propio index.html, para tener direcciones limpias.</li></ul>
+<p>Los nombres de archivo de las imágenes también ayudan al SEO de imágenes y hacen tu proyecto más fácil de entender cuando lo retomes meses después o cuando se lo pases a la IA para que te ayude.</p>
+<h2 id="mide-desde-el-primer-d-a">Mide desde el primer día</h2>
+<p>Instala una herramienta de analítica, como Google Analytics, para saber cuántas personas visitan tu página, desde dónde llegan y cuántas dan clic en el botón de WhatsApp. Sin datos no puedes saber si los cambios que haces funcionan. Una buena práctica es usar un enlace de WhatsApp con un mensaje distinto para tu sitio, como "Hola, vi su página web", para identificar qué clientes llegan desde ahí.</p>
+<h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+<h3>¿Puedo tener mi página sin pagar hosting?</h3>
+<p>Hay servicios gratuitos para sitios estáticos, pero para un negocio te recomiendo tu propio dominio. Da más confianza y es tuyo.</p>
+<h3>¿Cómo agrego más páginas?</h3>
+<p>Crea otro archivo, por ejemplo contacto.html, y enlázalo desde el menú. O mejor, crea carpetas con un index.html dentro para tener direcciones limpias como tusitio.com/contacto/.</p>
+<h3>¿Esta página aparecerá en Google?</h3>
+<p>Sí, cuando Google la descubra. Acelera el proceso con Search Console y con tu perfil de negocio.</p>
+<h2 id="conclusi-n">Conclusión</h2>
+<p>Con un solo archivo y unas cuantas etiquetas acabas de construir la presencia digital básica de un negocio. No es un sitio perfecto, pero es tuyo, es rápido y lo entiendes. Ese conocimiento vale mucho más que una plantilla bonita que no sabes modificar.</p></div>
+<div class="author"><img class="av" src="/img/cesar-zavala-avatar.jpg" alt="César Zavala" width="64" height="64" loading="lazy"><p><b>César Alessandro Zavala</b><br>Certificado por Meta y +8 años como consultor de Amazon. Director de Estudio E-commerce y de El Diario de Tamaulipas. Llevé Siafu al #1 en sillas de oficina de Amazon México y trabajo con marcas en Amazon, Mercado Libre y Shopify. <a href="/sobre-mi/">Conóceme</a> · Más contenido especializado en <a href="https://estudioecommerce.com.mx/">Estudio E-commerce</a>.<span class="cbtns"><a href="https://www.linkedin.com/in/cesar-alessandro-zavala-ab7b75b2" rel="noopener">LinkedIn ↗</a><a href="https://wa.me/525541920887?text=Hola%20C%C3%A9sar%2C%20vi%20tu%20sitio%20y%20quiero%20platicar%20de%20mi%20negocio" rel="noopener">WhatsApp →</a></span></p></div>
+</article><section class="more"><h2>Sigue leyendo</h2><div class="grid"><article class="card"><a href="/blog/sitio-estatico-vs-wordpress-cual-elegir/"><img src="/img/blog/sitio-estatico-vs-wordpress-cual-elegir.jpg" alt="Sitio estático vs WordPress: cuál elegir para tu negocio" loading="lazy" width="720" height="405"><div><span class="tag">Desarrollo web · 6 min</span><h3>Sitio estático vs WordPress: cuál elegir para tu negocio</h3><p>Velocidad, seguridad, costo, mantenimiento y facilidad de edición. Comparo las dos opciones más comunes para que elijas con criterio y no por moda.</p></div></a></article><article class="card"><a href="/blog/como-publicar-tu-sitio-con-github-y-hostinger/"><img src="/img/blog/como-publicar-tu-sitio-con-github-y-hostinger.jpg" alt="Cómo publicar tu sitio con GitHub y Hostinger (despliegue automático)" loading="lazy" width="720" height="405"><div><span class="tag">Desarrollo web · 6 min</span><h3>Cómo publicar tu sitio con GitHub y Hostinger (despliegue automático)</h3><p>Conecta tu repositorio de GitHub con Hostinger para que cada cambio se publique solo. Te explico el flujo que uso en mis sitios, paso a paso y con sus errores comunes.</p></div></a></article><article class="card"><a href="/blog/dominio-hosting-y-dns-explicados/"><img src="/img/blog/dominio-hosting-y-dns-explicados.jpg" alt="Dominio, hosting y DNS explicados para emprendedores" loading="lazy" width="720" height="405"><div><span class="tag">Desarrollo web · 6 min</span><h3>Dominio, hosting y DNS explicados para emprendedores</h3><p>Qué es cada uno, cuánto cuestan, cómo se conectan y qué errores evitar para que tu sitio no deje de funcionar. Guía sin tecnicismos.</p></div></a></article></div></section></main><footer><div class="wrap"><p><b style="color:#fff">César Alessandro Zavala</b> · Emprendimiento, publicidad digital y e-commerce.</p>
+<p>Sitios aliados: <a href="https://eldiariodetamaulipas.com/">El Diario de Tamaulipas</a> · <a href="https://estudioecommerce.com.mx/">Estudio E-commerce</a> · <a href="https://chubcluburger.com/">Chub Club Burger</a></p>
+<p><a href="https://www.instagram.com/alessandroecomm/">Instagram</a> · <a href="https://www.linkedin.com/in/cesar-alessandro-zavala-ab7b75b2">LinkedIn</a> · <a href="/blog/">Blog</a> · <a href="https://eldiariodetamaulipas.com/herramientas/">Calculadoras</a></p><p>© 2026 César Alessandro Zavala.</p></div></footer><a class="wa" href="https://wa.me/525541920887?text=Hola%20C%C3%A9sar%2C%20vi%20tu%20sitio%20y%20quiero%20platicar%20de%20mi%20negocio" rel="noopener" aria-label="Escríbeme por WhatsApp">💬 Platiquemos</a></body></html>

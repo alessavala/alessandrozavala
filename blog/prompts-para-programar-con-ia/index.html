@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prompts para programar con IA: cómo pedir código que sí funcione | César Alessandro Zavala</title><meta name="description" content="La estructura de prompt que uso para pedir código, corregir errores y revisar páginas web con inteligencia artificial, con ejemplos listos para copiar."><link rel="canonical" href="https://www.alessandrozavala.com/blog/prompts-para-programar-con-ia/">
+<meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#0a1f44">
+<meta property="og:type" content="website"><meta property="og:title" content="Prompts para programar con IA: cómo pedir código que sí funcione | César Alessandro Zavala"><meta property="og:description" content="La estructura de prompt que uso para pedir código, corregir errores y revisar páginas web con inteligencia artificial, con ejemplos listos para copiar.">
+<meta property="og:url" content="https://www.alessandrozavala.com/blog/prompts-para-programar-con-ia/"><meta property="og:image" content="https://www.alessandrozavala.com/img/blog/prompts-para-programar-con-ia.jpg"><meta property="og:locale" content="es_MX"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a1f44'/%3E%3Ccircle cx='46' cy='18' r='7' fill='%235ec8f2'/%3E%3C/svg%3E">
+<style>
+:root{--navy:#0a1f44;--navy2:#132d5e;--ink:#0f172a;--muted:#5b6b85;--sky:#5ec8f2;--sky2:#bfe9fb;--sky3:#eef9fe;--line:#dbe6f3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+a{color:var(--navy2)}img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header.top{position:sticky;top:0;z-index:10;background:rgba(10,31,68,.96);backdrop-filter:blur(8px)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{color:#fff;text-decoration:none;font-weight:800;letter-spacing:-.02em;font-size:1.15rem}.logo span{color:var(--sky)}
+nav a{color:#dbeafe;text-decoration:none;margin-left:22px;font-size:.95rem}nav a:hover{color:var(--sky)}
+.hero{background:radial-gradient(1200px 500px at 85% -10%,#1f4c8f 0,transparent 60%),linear-gradient(160deg,var(--navy) 0,#0d2a5a 100%);color:#fff;padding:96px 0 88px;overflow:hidden}
+.hero .eyebrow{display:inline-block;background:rgba(94,200,242,.15);color:var(--sky);border:1px solid rgba(94,200,242,.35);padding:6px 14px;border-radius:99px;font-size:.85rem;font-weight:600}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.3rem,5vw,3.8rem);line-height:1.08;margin:22px 0 18px;letter-spacing:-.02em;max-width:820px}
+.hero h1 em{color:var(--sky);font-style:normal}
+.hero .wrap{display:grid;grid-template-columns:1.35fr .9fr;gap:48px;align-items:center}.hero .me{position:relative}.hero .me img{width:100%;height:auto;border-radius:28px;border:4px solid rgba(94,200,242,.55);box-shadow:0 30px 60px rgba(0,0,0,.35);aspect-ratio:4/5;object-fit:cover;object-position:50% 40%}.hero .me span{position:absolute;left:-14px;bottom:24px;background:#fff;color:var(--navy);font-weight:700;font-size:.9rem;padding:10px 14px;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.hero p{font-size:1.2rem;color:#cfe3f7;max-width:660px;margin:0 0 30px}
+.btn{display:inline-block;background:var(--sky);color:var(--navy);font-weight:700;text-decoration:none;padding:14px 24px;border-radius:12px;margin:0 10px 10px 0}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}
+section{padding:72px 0}section h2.sec{font-family:Georgia,serif;font-size:2rem;color:var(--navy);margin:0 0 8px;letter-spacing:-.01em}
+.lead{color:var(--muted);margin:0 0 34px;max-width:680px}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.pillar{background:var(--sky3);border:1px solid var(--sky2);border-radius:18px;padding:26px}
+.pillar b{display:block;color:var(--navy);font-size:1.1rem;margin-bottom:6px}.pillar p{margin:0;color:var(--muted)}
+.pillar .n{display:inline-block;width:34px;height:34px;border-radius:10px;background:var(--navy);color:var(--sky);font-weight:800;text-align:center;line-height:34px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:26px}
+.card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(10,31,68,.12)}
+.card a{text-decoration:none;color:inherit}.card img{width:100%;aspect-ratio:16/9;object-fit:cover;height:auto}
+.card div{padding:18px 20px 22px}.card h3{margin:6px 0 8px;font-size:1.15rem;color:var(--navy);line-height:1.3}.card p{margin:0;color:var(--muted);font-size:.95rem}
+.tag{font-size:.78rem;font-weight:700;color:#0e7fb0;text-transform:uppercase;letter-spacing:.06em}
+.about{background:var(--navy);color:#e2edf9}.about .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center}
+.about h2.sec{color:#fff}.about .quote{font-family:Georgia,serif;font-size:1.6rem;line-height:1.35;color:var(--sky);border-left:4px solid var(--sky);padding-left:20px}
+.forwho{background:var(--sky3);border-bottom:1px solid var(--sky2)}.fw{max-width:820px}.forwho h2.sec{font-size:clamp(1.6rem,3vw,2.2rem)}.forwho p{font-size:1.12rem;color:#334155}.eyebrow2{font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#0e7fb0}.trip{background:#fff;border:1px dashed var(--sky);border-radius:14px;padding:14px 18px}
+.estudio{background:linear-gradient(150deg,#0d2a5a,var(--navy));color:#cfe3f7}.estudio .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center}.estudio ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}.estudio li{border:1px solid rgba(94,200,242,.45);color:#fff;border-radius:99px;padding:8px 14px;font-weight:600;font-size:.92rem}@media(max-width:760px){.estudio .wrap{grid-template-columns:1fr}}
+.edgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}.ed{display:block;border:1px solid var(--line);border-left:4px solid var(--sky);border-radius:12px;padding:16px 18px;text-decoration:none;color:var(--navy);font-weight:700;background:#fff}.ed:hover{background:var(--sky3)}.ed small{display:block;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:#0e7fb0;margin-bottom:4px}
+.vgrid{display:grid;grid-template-columns:1.6fr 1fr;gap:16px}.vside{display:grid;gap:12px}.yt,.ytf{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:16px;overflow:hidden;background:#000;cursor:pointer}.yt img{width:100%;height:100%;object-fit:cover;opacity:.85}.yt:hover img{opacity:1}.yt .play{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;background:var(--sky);color:var(--navy);font-size:26px;line-height:64px;text-align:center}.vside .yt .play{width:44px;height:44px;line-height:44px;font-size:18px}.yt .cap{position:absolute;left:0;right:0;bottom:0;padding:10px 14px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff;font-weight:700;text-align:left;font-size:.95rem}@media(max-width:760px){.vgrid{grid-template-columns:1fr}}
+.cbtns{display:flex;gap:10px;margin-top:10px}.cbtns a{background:var(--navy);color:#fff!important;text-decoration:none;padding:7px 12px;border-radius:9px;font-size:.85rem;font-weight:700}.cbtns a+a{background:#25d366;color:#08311a!important}.wa{position:fixed;right:18px;bottom:18px;z-index:20;background:#25d366;color:#08311a;font-weight:800;text-decoration:none;padding:12px 16px;border-radius:99px;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.iggrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;align-items:start}
+.eco{background:var(--sky3)}.ecogrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}.ecocard{background:#fff;border:1px solid var(--sky2);border-radius:18px;padding:24px;display:flex;flex-direction:column}.ecocard.me{background:var(--navy);color:#cfe3f7;border-color:var(--navy)}.ecocard small{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#0e7fb0}.ecocard.me small{color:var(--sky)}.ecocard h3{margin:6px 0 8px;color:var(--navy);font-size:1.3rem}.ecocard.me h3{color:#fff}.ecocard p{color:var(--muted);flex:1}.ecocard.me p{color:#cfe3f7}.ecocard a{font-weight:700;color:#0e7fb0;text-decoration:none}.ecocard.me a{color:var(--sky)}.ecoburger{margin-top:20px;color:var(--muted)}
+.human .wrap{display:grid;grid-template-columns:.8fr 1.4fr;gap:44px;align-items:center}.human img{width:100%;height:auto;border-radius:22px;border:3px solid var(--sky2)}.human .cap{font-size:.85rem;color:var(--muted);margin-top:8px}@media(max-width:760px){.human .wrap{grid-template-columns:1fr}.human img{max-width:340px}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:26px}.stats div{background:rgba(94,200,242,.1);border:1px solid rgba(94,200,242,.3);border-radius:14px;padding:14px}.stats b{display:block;color:#fff;font-size:1.5rem}.stats span{font-size:.85rem;color:#bcd3ee}
+.allies{display:flex;flex-wrap:wrap;gap:14px}.allies a{border:1px solid var(--line);border-radius:14px;padding:14px 18px;text-decoration:none;color:var(--navy);font-weight:600;background:var(--sky3)}
+.allies a small{display:block;color:var(--muted);font-weight:400}
+footer{background:#081733;color:#9fb4d1;padding:40px 0;font-size:.9rem}footer a{color:var(--sky)}
+article.post{max-width:760px;margin:0 auto;padding:48px 22px 24px}
+.crumbs{font-size:.85rem;color:var(--muted)}.crumbs a{color:var(--muted)}
+article.post h1{font-family:Georgia,serif;font-size:clamp(2rem,4.2vw,2.8rem);line-height:1.15;color:var(--navy);margin:12px 0 14px;letter-spacing:-.015em}
+.dek{font-size:1.2rem;color:var(--muted);margin:0 0 18px}.meta{font-size:.9rem;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.meta b{color:var(--navy)}figure{margin:0 0 30px}figure img{border-radius:16px;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+figcaption{font-size:.78rem;color:var(--muted);margin-top:8px}
+.content{font-size:1.1rem}.content h2{font-family:Georgia,serif;color:var(--navy);font-size:1.65rem;margin:2.2em 0 .5em;padding-top:.2em;border-top:3px solid var(--sky2)}
+.content h3{color:var(--navy2);font-size:1.22rem;margin:1.6em 0 .4em}.content li{margin:.35em 0}.content strong{color:var(--navy)}
+.content pre{background:#0f172a;color:#e2e8f0;padding:16px 18px;border-radius:12px;overflow-x:auto;font-size:.88rem;line-height:1.5}.content code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.content a{color:#0e7fb0;text-decoration-thickness:2px;text-underline-offset:3px}
+.author{display:flex;gap:16px;align-items:center;background:var(--sky3);border:1px solid var(--sky2);border-radius:18px;padding:22px;margin:40px 0}
+.author .av{flex:none;width:64px;height:64px;border-radius:50%;border:3px solid var(--sky);object-fit:cover}.aboutpic{float:right;width:240px;margin:0 0 18px 26px;border-radius:20px;border:3px solid var(--sky2)}
+.author p{margin:0;color:var(--muted)}.author b{color:var(--navy)}
+.more{max-width:1120px;margin:0 auto;padding:10px 22px 70px}.more h2{font-family:Georgia,serif;color:var(--navy)}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}nav a[href="/#temas"],nav a[href="/#mis-sitios"],nav a[href="/#podcast"],nav a[href="/#instagram"]{display:none}.logo{font-size:1rem}.hero .me{max-width:320px}.aboutpic{float:none;width:100%;max-width:320px;margin:0 0 20px}nav a{margin-left:14px;font-size:.88rem}.about .wrap{grid-template-columns:1fr}.hero{padding:70px 0}section{padding:54px 0}}
+</style><meta property="article:published_time" content="2026-11-25T01:30:00-06:00"><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Prompts para programar con IA: cómo pedir código que sí funcione", "description": "La estructura de prompt que uso para pedir código, corregir errores y revisar páginas web con inteligencia artificial, con ejemplos listos para copiar.", "image": ["https://www.alessandrozavala.com/img/blog/prompts-para-programar-con-ia.jpg"], "datePublished": "2026-11-25T01:30:00-06:00", "dateModified": "2026-11-25T01:30:00-06:00", "author": {"@type": "Person", "name": "César Alessandro Zavala", "url": "https://www.alessandrozavala.com/", "image": "https://www.alessandrozavala.com/img/cesar-zavala.jpg"}, "publisher": {"@type": "Person", "name": "César Alessandro Zavala", "url": "https://www.alessandrozavala.com/", "image": "https://www.alessandrozavala.com/img/cesar-zavala.jpg"}, "mainEntityOfPage": "https://www.alessandrozavala.com/blog/prompts-para-programar-con-ia/", "inLanguage": "es-MX"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.alessandrozavala.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.alessandrozavala.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Prompts para programar con IA: cómo pedir código que sí funcione", "item": "https://www.alessandrozavala.com/blog/prompts-para-programar-con-ia/"}]}]}</script></head><body>
+<header class="top"><div class="wrap"><a class="logo" href="/">Alessandro<span>.</span>Zavala</a>
+<nav><a href="/blog/">Blog</a><a href="/#mis-sitios">Mis sitios</a><a href="/#podcast">Podcast</a><a href="/#instagram">Instagram</a><a href="/sobre-mi/">Sobre mí</a><a href="/#temas">Temas</a></nav></div></header>
+<main><article class="post"><div class="crumbs"><a href="/">Inicio</a> › <a href="/blog/">Blog</a> › IA</div>
+<h1>Prompts para programar con IA: cómo pedir código que sí funcione</h1><p class="dek">La estructura de prompt que uso para pedir código, corregir errores y revisar páginas web con inteligencia artificial, con ejemplos listos para copiar.</p>
+<div class="meta"><span>Por <b>César Alessandro Zavala</b></span><span><time datetime="2026-11-25T01:30:00-06:00">25 de noviembre de 2026</time></span><span>7 min de lectura</span></div>
+<figure><img src="/img/blog/prompts-para-programar-con-ia.jpg" alt="Prompts para programar con IA: cómo pedir código que sí funcione" width="1200" height="675"></figure>
+<div class="content"><p>La diferencia entre obtener código que funciona a la primera y pasar horas corrigiendo errores casi siempre está en cómo lo pides. La inteligencia artificial no adivina lo que tienes en la cabeza: trabaja con lo que le escribes. En esta guía te comparto la estructura de prompts que uso para programar y una colección de ejemplos que puedes adaptar.</p>
+<h2 id="por-qu-los-prompts-vagos-dan-malos-resultados">Por qué los prompts vagos dan malos resultados</h2>
+<p>Si escribes "hazme una página para mi negocio", la IA tiene que suponer todo: qué vendes, dónde, para quién, con qué colores, qué secciones y qué tecnología. Va a entregarte algo genérico que tendrás que rehacer. Un buen prompt reduce las suposiciones al mínimo.</p>
+<h2 id="la-estructura-de-un-buen-prompt-para-c-digo">La estructura de un buen prompt para código</h2>
+<p>Un prompt efectivo tiene seis partes:</p>
+<ul><li><strong>Contexto:</strong> qué proyecto es, para quién y en qué tecnología.</li><li><strong>Objetivo:</strong> qué debe hacer el código.</li><li><strong>Entradas:</strong> el código actual, los datos o los archivos con los que trabaja.</li><li><strong>Requisitos:</strong> reglas que debe cumplir.</li><li><strong>Restricciones:</strong> lo que no debe hacer.</li><li><strong>Formato de salida:</strong> cómo quieres la respuesta.</li></ul>
+<p>No siempre necesitas las seis, pero mientras más completas sean, mejor el resultado.</p>
+<h2 id="ejemplo-completo">Ejemplo completo</h2>
+<pre><code>Contexto: sitio estático de una hamburguesería en Tampico, HTML y CSS sin frameworks.
+Objetivo: agregar una sección de menú con tarjetas de producto.
+Entradas: te pego el HTML actual de la página.
+Requisitos:
+- Tarjetas con foto, nombre, descripción corta y precio.
+- Cuadrícula de 3 columnas en computadora y 1 en celular.
+- Imágenes con texto alternativo y carga diferida.
+- Mantener los colores y tipografías actuales.
+Restricciones:
+- No uses JavaScript.
+- No cambies otras secciones.
+Formato: dame sólo el HTML de la sección y el CSS nuevo, por separado.</code></pre>
+<p>Este prompt deja muy poco a la suposición. El resultado suele poder pegarse directamente.</p>
+<h2 id="prompts-para-crear-desde-cero">Prompts para crear desde cero</h2>
+<h3>Página de aterrizaje</h3>
+<pre><code>Crea una landing page en un solo archivo HTML para [producto o servicio] en [ciudad].
+Objetivo: que el visitante [acción: escriba por WhatsApp / llene un formulario].
+Secciones: portada con beneficio principal, problemas que resuelve, cómo funciona en 3 pasos,
+testimonios (deja espacios marcados, no inventes nombres), preguntas frecuentes y llamada final.
+Diseño responsive, rápido y sin librerías externas.</code></pre>
+<p>Fíjate en la instrucción de no inventar testimonios. La IA tiende a llenar huecos con datos ficticios si no se lo prohíbes.</p>
+<h3>Componente específico</h3>
+<pre><code>Crea un menú de navegación responsive con HTML y CSS.
+En computadora: logo a la izquierda, enlaces a la derecha.
+En celular: botón de hamburguesa que despliega los enlaces.
+Usa el mínimo JavaScript posible y que funcione con teclado.</code></pre>
+<h2 id="prompts-para-corregir-errores">Prompts para corregir errores</h2>
+<p>El error más común es pedir ayuda sin dar información. Este formato funciona:</p>
+<pre><code>Tengo este error en la consola del navegador: [pega el error].
+Este es el código relacionado: [pega el código].
+Esperaba que [lo que debía pasar], pero pasa [lo que pasa].
+Explícame la causa en palabras simples y dame la corrección mínima.</code></pre>
+<p>Pedir "la corrección mínima" evita que la IA reescriba todo tu archivo y cambie cosas que funcionaban.</p>
+<h2 id="prompts-para-revisar">Prompts para revisar</h2>
+<p>Usar la IA como revisor es de lo más valioso, porque detecta problemas que tú no ves:</p>
+<pre><code>Revisa este HTML como experto en SEO técnico y accesibilidad.
+Dame una lista priorizada de problemas, de más grave a menos grave,
+con la línea donde ocurre y la corrección sugerida.
+No reescribas el archivo completo.</code></pre>
+<p>Otros revisores útiles:</p>
+<ul><li>"Revisa si este código tiene problemas de seguridad, como datos sensibles expuestos."</li><li>"Dime qué elementos de esta página pueden hacerla lenta y cómo optimizarlos."</li><li>"Revisa la ortografía y la claridad de estos textos sin cambiar el tono."</li></ul>
+<h2 id="prompts-para-automatizar">Prompts para automatizar</h2>
+<p>Cuando ya tienes una plantilla, la IA puede ayudarte a crear herramientas que trabajen por ti:</p>
+<pre><code>Escribe un script en Python que lea un archivo con artículos en formato markdown,
+los inserte en esta plantilla HTML, genere una página por artículo en su propia carpeta
+y actualice el archivo sitemap.xml. Explica cómo ejecutarlo.</code></pre>
+<p>Con un script así puedes <a href="/blog/como-publicar-100-blogs-en-un-dia-con-ia/">publicar decenas de blogs en un día con IA</a>, siempre con revisión de calidad.</p>
+<h2 id="t-cnicas-que-mejoran-los-resultados">Técnicas que mejoran los resultados</h2>
+<h3>Divide el trabajo</h3>
+<p>No pidas un sitio completo con diez páginas en un solo mensaje. Pide la estructura, luego cada sección, luego los ajustes. Los resultados son mejores y es más fácil detectar errores.</p>
+<h3>Da ejemplos</h3>
+<p>Si tienes una sección que te gusta, pégala y di "haz la nueva sección con el mismo estilo". La IA imita muy bien.</p>
+<h3>Pide que pregunte</h3>
+<p>Agrega al final: "Si te falta información, pregúntame antes de escribir el código". Evitas que suponga cosas importantes.</p>
+<h3>Pide explicaciones</h3>
+<p>"Explica cada cambio en una línea" te ayuda a entender y a detectar si la IA tomó una decisión que no querías.</p>
+<h3>Mantén una conversación por tarea</h3>
+<p>Si llevas mucho tiempo en la misma conversación y la IA empieza a confundirse, abre una nueva con un resumen del estado actual y el código vigente.</p>
+<h2 id="lo-que-nunca-debes-poner-en-un-prompt">Lo que nunca debes poner en un prompt</h2>
+<ul><li>Contraseñas, claves de API o tokens.</li><li>Datos personales de tus clientes.</li><li>Información confidencial de tu empresa que no quieras compartir con un servicio externo.</li></ul>
+<p>Si necesitas que la IA trabaje con un archivo de configuración, reemplaza los valores sensibles por textos de ejemplo.</p>
+<h2 id="una-plantilla-para-guardar">Una plantilla para guardar</h2>
+<p>Te recomiendo guardar en una nota este formato y usarlo siempre:</p>
+<pre><code>Contexto:
+Objetivo:
+Código o datos actuales:
+Requisitos:
+No hagas:
+Formato de respuesta:
+Si te falta información, pregúntame.</code></pre>
+<h2 id="los-errores-m-s-comunes-al-pedir-c-digo">Los errores más comunes al pedir código</h2>
+<p>Después de usar la IA todos los días para programar, estos son los errores que más veo, en mí mismo y en otros:</p>
+<ul><li><strong>No decir la tecnología.</strong> Si no especificas que tu sitio es HTML estático, la IA puede responder con código para un framework que no usas.</li><li><strong>No pegar el código actual.</strong> La IA inventa nombres de clases o estructuras que no coinciden con lo que ya tienes, y luego nada encaja.</li><li><strong>Pedir "mejóralo".</strong> Es demasiado vago. Di qué quieres mejorar: velocidad, diseño en celular, accesibilidad o claridad del texto.</li><li><strong>Aceptar todo sin leer.</strong> A veces la IA elimina partes que funcionaban o cambia textos que no le pediste. Compara antes y después.</li><li><strong>Olvidar el celular.</strong> Si no lo pides, el resultado puede verse bien en computadora y mal en teléfono.</li></ul>
+<h2 id="c-mo-pedir-explicaciones-para-aprender">Cómo pedir explicaciones para aprender</h2>
+<p>Si quieres usar la IA no sólo para avanzar, sino para aprender, cambia la forma en que pides. En lugar de "dame el código", prueba:</p>
+<ul><li>"Explícame paso a paso qué hace este código, como si fuera mi primera vez."</li><li>"Dame dos formas de resolver esto y dime las ventajas de cada una."</li><li>"Déjame intentarlo primero; revisa mi código y dime qué mejorarías."</li><li>"¿Qué debería aprender para entender este error por mi cuenta la próxima vez?"</li></ul>
+<p>En pocas semanas notarás que necesitas pedir menos y que entiendes mejor lo que la IA te propone.</p>
+<h2 id="prompts-para-contenido-y-seo">Prompts para contenido y SEO</h2>
+<p>Programar un sitio no es sólo código. También puedes usar prompts para la parte de contenido y posicionamiento:</p>
+<ul><li>"Escribe 10 títulos para una página sobre [tema] dirigida a [cliente], de menos de 60 caracteres, que incluyan [palabra clave] de forma natural."</li><li>"Escribe una meta descripción de menos de 155 caracteres para esta página, con un beneficio claro y una invitación a actuar."</li><li>"Propón la estructura de encabezados H2 y H3 para un artículo que responda [pregunta], sin repetir ideas."</li><li>"Genera los datos estructurados JSON-LD de tipo FAQPage para estas preguntas y respuestas."</li></ul>
+<p>Recuerda revisar siempre el resultado: los títulos y descripciones son lo primero que ve la gente en Google, y vale la pena que suenen a ti.</p>
+<h2 id="c-mo-evaluar-si-un-prompt-funcion">Cómo evaluar si un prompt funcionó</h2>
+<p>Un prompt funcionó si el resultado cumple tres condiciones: hace lo que pediste, no rompe lo que ya funcionaba y lo entiendes lo suficiente para mantenerlo. Si falla en alguna, no repitas el mismo prompt: identifica qué información faltó y agrégala. Con el tiempo armarás tu propia colección de prompts probados para tu proyecto.</p>
+<h2 id="un-ejemplo-de-antes-y-despu-s">Un ejemplo de antes y después</h2>
+<p>Prompt débil: "Mi página se ve mal en el celular, arréglala." La IA no sabe qué es "mal", no ve tu página y probablemente reescribirá todo el CSS.</p>
+<p>Prompt fuerte: "En celulares de menos de 400 píxeles, las tarjetas de productos se salen de la pantalla y aparece scroll horizontal. Te pego el HTML de la sección y el CSS actual. Corrige sólo lo necesario para que las tarjetas ocupen una columna en celular y explica la causa." Con esto, la IA sabe el síntoma, el contexto, el alcance y lo que esperas de la respuesta.</p>
+<h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+<h3>¿Importa en qué idioma escribo el prompt?</h3>
+<p>Puedes escribir en español sin problema. Lo importante es la claridad y el detalle.</p>
+<h3>¿Qué hago si la IA insiste en un error?</h3>
+<p>Abre una conversación nueva, explica el problema desde cero y pega sólo el código relevante. A veces el historial largo confunde al modelo.</p>
+<h3>¿Puedo confiar en el código sin revisarlo?</h3>
+<p>Para cambios pequeños en páginas estáticas, el riesgo es bajo si lo pruebas. Para pagos, formularios con datos personales o sistemas internos, siempre necesita revisión cuidadosa.</p>
+<h2 id="conclusi-n">Conclusión</h2>
+<p>Programar con IA es una habilidad nueva: la de explicar bien lo que quieres. Con contexto, requisitos claros, restricciones y cambios pequeños, la IA se convierte en un programador rápido y paciente. Guarda la plantilla de esta guía y úsala en tu próximo proyecto: vas a notar la diferencia desde el primer intento.</p></div>
+<div class="author"><img class="av" src="/img/cesar-zavala-avatar.jpg" alt="César Zavala" width="64" height="64" loading="lazy"><p><b>César Alessandro Zavala</b><br>Certificado por Meta y +8 años como consultor de Amazon. Director de Estudio E-commerce y de El Diario de Tamaulipas. Llevé Siafu al #1 en sillas de oficina de Amazon México y trabajo con marcas en Amazon, Mercado Libre y Shopify. <a href="/sobre-mi/">Conóceme</a> · Más contenido especializado en <a href="https://estudioecommerce.com.mx/">Estudio E-commerce</a>.<span class="cbtns"><a href="https://www.linkedin.com/in/cesar-alessandro-zavala-ab7b75b2" rel="noopener">LinkedIn ↗</a><a href="https://wa.me/525541920887?text=Hola%20C%C3%A9sar%2C%20vi%20tu%20sitio%20y%20quiero%20platicar%20de%20mi%20negocio" rel="noopener">WhatsApp →</a></span></p></div>
+</article><section class="more"><h2>Sigue leyendo</h2><div class="grid"><article class="card"><a href="/blog/como-usar-git-y-github-desde-cero/"><img src="/img/blog/como-usar-git-y-github-desde-cero.jpg" alt="Cómo usar Git y GitHub desde cero (para no programadores)" loading="lazy" width="720" height="405"><div><span class="tag">Tutorial básico · 6 min</span><h3>Cómo usar Git y GitHub desde cero (para no programadores)</h3><p>Qué son Git y GitHub, para qué sirven aunque no seas programador y los comandos básicos que necesitas para guardar y publicar tu sitio web.</p></div></a></article><article class="card"><a href="/blog/seo-tecnico-basico-para-tu-sitio-web/"><img src="/img/blog/seo-tecnico-basico-para-tu-sitio-web.jpg" alt="SEO técnico básico para tu sitio web: la checklist que uso" loading="lazy" width="720" height="405"><div><span class="tag">Desarrollo web · 6 min</span><h3>SEO técnico básico para tu sitio web: la checklist que uso</h3><p>Títulos, descripciones, encabezados, URLs, canonical, sitemap, robots, velocidad y datos estructurados. Lo mínimo para que Google entienda y muestre tu sitio.</p></div></a></article><article class="card"><a href="/blog/velocidad-web-core-web-vitals-explicado/"><img src="/img/blog/velocidad-web-core-web-vitals-explicado.jpg" alt="Velocidad web y Core Web Vitals explicados en palabras simples" loading="lazy" width="720" height="405"><div><span class="tag">Desarrollo web · 6 min</span><h3>Velocidad web y Core Web Vitals explicados en palabras simples</h3><p>Qué miden LCP, INP y CLS, cómo revisarlos gratis y las mejoras que más impacto tienen para que tu sitio cargue rápido en el celular.</p></div></a></article></div></section></main><footer><div class="wrap"><p><b style="color:#fff">César Alessandro Zavala</b> · Emprendimiento, publicidad digital y e-commerce.</p>
+<p>Sitios aliados: <a href="https://eldiariodetamaulipas.com/">El Diario de Tamaulipas</a> · <a href="https://estudioecommerce.com.mx/">Estudio E-commerce</a> · <a href="https://chubcluburger.com/">Chub Club Burger</a></p>
+<p><a href="https://www.instagram.com/alessandroecomm/">Instagram</a> · <a href="https://www.linkedin.com/in/cesar-alessandro-zavala-ab7b75b2">LinkedIn</a> · <a href="/blog/">Blog</a> · <a href="https://eldiariodetamaulipas.com/herramientas/">Calculadoras</a></p><p>© 2026 César Alessandro Zavala.</p></div></footer><a class="wa" href="https://wa.me/525541920887?text=Hola%20C%C3%A9sar%2C%20vi%20tu%20sitio%20y%20quiero%20platicar%20de%20mi%20negocio" rel="noopener" aria-label="Escríbeme por WhatsApp">💬 Platiquemos</a></body></html>

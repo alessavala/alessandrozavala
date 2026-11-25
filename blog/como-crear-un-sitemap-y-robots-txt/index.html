@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cómo crear un sitemap y un robots.txt para tu sitio | César Alessandro Zavala</title><meta name="description" content="Qué son, para qué sirven, cómo se escriben y cómo enviarlos a Google Search Console. Incluye ejemplos listos para copiar y errores que debes evitar."><link rel="canonical" href="https://www.alessandrozavala.com/blog/como-crear-un-sitemap-y-robots-txt/">
+<meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#0a1f44">
+<meta property="og:type" content="website"><meta property="og:title" content="Cómo crear un sitemap y un robots.txt para tu sitio | César Alessandro Zavala"><meta property="og:description" content="Qué son, para qué sirven, cómo se escriben y cómo enviarlos a Google Search Console. Incluye ejemplos listos para copiar y errores que debes evitar.">
+<meta property="og:url" content="https://www.alessandrozavala.com/blog/como-crear-un-sitemap-y-robots-txt/"><meta property="og:image" content="https://www.alessandrozavala.com/img/blog/como-crear-un-sitemap-y-robots-txt.jpg"><meta property="og:locale" content="es_MX"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a1f44'/%3E%3Ccircle cx='46' cy='18' r='7' fill='%235ec8f2'/%3E%3C/svg%3E">
+<style>
+:root{--navy:#0a1f44;--navy2:#132d5e;--ink:#0f172a;--muted:#5b6b85;--sky:#5ec8f2;--sky2:#bfe9fb;--sky3:#eef9fe;--line:#dbe6f3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+a{color:var(--navy2)}img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header.top{position:sticky;top:0;z-index:10;background:rgba(10,31,68,.96);backdrop-filter:blur(8px)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{color:#fff;text-decoration:none;font-weight:800;letter-spacing:-.02em;font-size:1.15rem}.logo span{color:var(--sky)}
+nav a{color:#dbeafe;text-decoration:none;margin-left:22px;font-size:.95rem}nav a:hover{color:var(--sky)}
+.hero{background:radial-gradient(1200px 500px at 85% -10%,#1f4c8f 0,transparent 60%),linear-gradient(160deg,var(--navy) 0,#0d2a5a 100%);color:#fff;padding:96px 0 88px;overflow:hidden}
+.hero .eyebrow{display:inline-block;background:rgba(94,200,242,.15);color:var(--sky);border:1px solid rgba(94,200,242,.35);padding:6px 14px;border-radius:99px;font-size:.85rem;font-weight:600}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.3rem,5vw,3.8rem);line-height:1.08;margin:22px 0 18px;letter-spacing:-.02em;max-width:820px}
+.hero h1 em{color:var(--sky);font-style:normal}
+.hero .wrap{display:grid;grid-template-columns:1.35fr .9fr;gap:48px;align-items:center}.hero .me{position:relative}.hero .me img{width:100%;height:auto;border-radius:28px;border:4px solid rgba(94,200,242,.55);box-shadow:0 30px 60px rgba(0,0,0,.35);aspect-ratio:4/5;object-fit:cover;object-position:50% 40%}.hero .me span{position:absolute;left:-14px;bottom:24px;background:#fff;color:var(--navy);font-weight:700;font-size:.9rem;padding:10px 14px;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.hero p{font-size:1.2rem;color:#cfe3f7;max-width:660px;margin:0 0 30px}
+.btn{display:inline-block;background:var(--sky);color:var(--navy);font-weight:700;text-decoration:none;padding:14px 24px;border-radius:12px;margin:0 10px 10px 0}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}
+section{padding:72px 0}section h2.sec{font-family:Georgia,serif;font-size:2rem;color:var(--navy);margin:0 0 8px;letter-spacing:-.01em}
+.lead{color:var(--muted);margin:0 0 34px;max-width:680px}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.pillar{background:var(--sky3);border:1px solid var(--sky2);border-radius:18px;padding:26px}
+.pillar b{display:block;color:var(--navy);font-size:1.1rem;margin-bottom:6px}.pillar p{margin:0;color:var(--muted)}
+.pillar .n{display:inline-block;width:34px;height:34px;border-radius:10px;background:var(--navy);color:var(--sky);font-weight:800;text-align:center;line-height:34px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:26px}
+.card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(10,31,68,.12)}
+.card a{text-decoration:none;color:inherit}.card img{width:100%;aspect-ratio:16/9;object-fit:cover;height:auto}
+.card div{padding:18px 20px 22px}.card h3{margin:6px 0 8px;font-size:1.15rem;color:var(--navy);line-height:1.3}.card p{margin:0;color:var(--muted);font-size:.95rem}
+.tag{font-size:.78rem;font-weight:700;color:#0e7fb0;text-transform:uppercase;letter-spacing:.06em}
+.about{background:var(--navy);color:#e2edf9}.about .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center}
+.about h2.sec{color:#fff}.about .quote{font-family:Georgia,serif;font-size:1.6rem;line-height:1.35;color:var(--sky);border-left:4px solid var(--sky);padding-left:20px}
+.forwho{background:var(--sky3);border-bottom:1px solid var(--sky2)}.fw{max-width:820px}.forwho h2.sec{font-size:clamp(1.6rem,3vw,2.2rem)}.forwho p{font-size:1.12rem;color:#334155}.eyebrow2{font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#0e7fb0}.trip{background:#fff;border:1px dashed var(--sky);border-radius:14px;padding:14px 18px}
+.estudio{background:linear-gradient(150deg,#0d2a5a,var(--navy));color:#cfe3f7}.estudio .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center}.estudio ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}.estudio li{border:1px solid rgba(94,200,242,.45);color:#fff;border-radius:99px;padding:8px 14px;font-weight:600;font-size:.92rem}@media(max-width:760px){.estudio .wrap{grid-template-columns:1fr}}
+.edgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}.ed{display:block;border:1px solid var(--line);border-left:4px solid var(--sky);border-radius:12px;padding:16px 18px;text-decoration:none;color:var(--navy);font-weight:700;background:#fff}.ed:hover{background:var(--sky3)}.ed small{display:block;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:#0e7fb0;margin-bottom:4px}
+.vgrid{display:grid;grid-template-columns:1.6fr 1fr;gap:16px}.vside{display:grid;gap:12px}.yt,.ytf{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:16px;overflow:hidden;background:#000;cursor:pointer}.yt img{width:100%;height:100%;object-fit:cover;opacity:.85}.yt:hover img{opacity:1}.yt .play{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;background:var(--sky);color:var(--navy);font-size:26px;line-height:64px;text-align:center}.vside .yt .play{width:44px;height:44px;line-height:44px;font-size:18px}.yt .cap{position:absolute;left:0;right:0;bottom:0;padding:10px 14px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff;font-weight:700;text-align:left;font-size:.95rem}@media(max-width:760px){.vgrid{grid-template-columns:1fr}}
+.cbtns{display:flex;gap:10px;margin-top:10px}.cbtns a{background:var(--navy);color:#fff!important;text-decoration:none;padding:7px 12px;border-radius:9px;font-size:.85rem;font-weight:700}.cbtns a+a{background:#25d366;color:#08311a!important}.wa{position:fixed;right:18px;bottom:18px;z-index:20;background:#25d366;color:#08311a;font-weight:800;text-decoration:none;padding:12px 16px;border-radius:99px;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.iggrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;align-items:start}
+.eco{background:var(--sky3)}.ecogrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}.ecocard{background:#fff;border:1px solid var(--sky2);border-radius:18px;padding:24px;display:flex;flex-direction:column}.ecocard.me{background:var(--navy);color:#cfe3f7;border-color:var(--navy)}.ecocard small{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#0e7fb0}.ecocard.me small{color:var(--sky)}.ecocard h3{margin:6px 0 8px;color:var(--navy);font-size:1.3rem}.ecocard.me h3{color:#fff}.ecocard p{color:var(--muted);flex:1}.ecocard.me p{color:#cfe3f7}.ecocard a{font-weight:700;color:#0e7fb0;text-decoration:none}.ecocard.me a{color:var(--sky)}.ecoburger{margin-top:20px;color:var(--muted)}
+.human .wrap{display:grid;grid-template-columns:.8fr 1.4fr;gap:44px;align-items:center}.human img{width:100%;height:auto;border-radius:22px;border:3px solid var(--sky2)}.human .cap{font-size:.85rem;color:var(--muted);margin-top:8px}@media(max-width:760px){.human .wrap{grid-template-columns:1fr}.human img{max-width:340px}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:26px}.stats div{background:rgba(94,200,242,.1);border:1px solid rgba(94,200,242,.3);border-radius:14px;padding:14px}.stats b{display:block;color:#fff;font-size:1.5rem}.stats span{font-size:.85rem;color:#bcd3ee}
+.allies{display:flex;flex-wrap:wrap;gap:14px}.allies a{border:1px solid var(--line);border-radius:14px;padding:14px 18px;text-decoration:none;color:var(--navy);font-weight:600;background:var(--sky3)}
+.allies a small{display:block;color:var(--muted);font-weight:400}
+footer{background:#081733;color:#9fb4d1;padding:40px 0;font-size:.9rem}footer a{color:var(--sky)}
+article.post{max-width:760px;margin:0 auto;padding:48px 22px 24px}
+.crumbs{font-size:.85rem;color:var(--muted)}.crumbs a{color:var(--muted)}
+article.post h1{font-family:Georgia,serif;font-size:clamp(2rem,4.2vw,2.8rem);line-height:1.15;color:var(--navy);margin:12px 0 14px;letter-spacing:-.015em}
+.dek{font-size:1.2rem;color:var(--muted);margin:0 0 18px}.meta{font-size:.9rem;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.meta b{color:var(--navy)}figure{margin:0 0 30px}figure img{border-radius:16px;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+figcaption{font-size:.78rem;color:var(--muted);margin-top:8px}
+.content{font-size:1.1rem}.content h2{font-family:Georgia,serif;color:var(--navy);font-size:1.65rem;margin:2.2em 0 .5em;padding-top:.2em;border-top:3px solid var(--sky2)}
+.content h3{color:var(--navy2);font-size:1.22rem;margin:1.6em 0 .4em}.content li{margin:.35em 0}.content strong{color:var(--navy)}
+.content pre{background:#0f172a;color:#e2e8f0;padding:16px 18px;border-radius:12px;overflow-x:auto;font-size:.88rem;line-height:1.5}.content code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.content a{color:#0e7fb0;text-decoration-thickness:2px;text-underline-offset:3px}
+.author{display:flex;gap:16px;align-items:center;background:var(--sky3);border:1px solid var(--sky2);border-radius:18px;padding:22px;margin:40px 0}
+.author .av{flex:none;width:64px;height:64px;border-radius:50%;border:3px solid var(--sky);object-fit:cover}.aboutpic{float:right;width:240px;margin:0 0 18px 26px;border-radius:20px;border:3px solid var(--sky2)}
+.author p{margin:0;color:var(--muted)}.author b{color:var(--navy)}
+.more{max-width:1120px;margin:0 auto;padding:10px 22px 70px}.more h2{font-family:Georgia,serif;color:var(--navy)}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}nav a[href="/#temas"],nav a[href="/#mis-sitios"],nav a[href="/#podcast"],nav a[href="/#instagram"]{display:none}.logo{font-size:1rem}.hero .me{max-width:320px}.aboutpic{float:none;width:100%;max-width:320px;margin:0 0 20px}nav a{margin-left:14px;font-size:.88rem}.about .wrap{grid-template-columns:1fr}.hero{padding:70px 0}section{padding:54px 0}}
+</style><meta property="article:published_time" content="2026-11-25T01:30:00-06:00"><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Cómo crear un sitemap y un robots.txt para tu sitio", "description": "Qué son, para qué sirven, cómo se escriben y cómo enviarlos a Google Search Console. Incluye ejemplos listos para copiar y errores que debes evitar.", "image": ["https://www.alessandrozavala.com/img/blog/como-crear-un-sitemap-y-robots-txt.jpg"], "datePublished": "2026-11-25T01:30:00-06:00", "dateModified": "2026-11-25T01:30:00-06:00", "author": {"@type": "Person", "name": "César Alessandro Zavala", "url": "https://www.alessandrozavala.com/", "image": "https://www.alessandrozavala.com/img/cesar-zavala.jpg"}, "publisher": {"@type": "Person", "name": "César Alessandro Zavala", "url": "https://www.alessandrozavala.com/", "image": "https://www.alessandrozavala.com/img/cesar-zavala.jpg"}, "mainEntityOfPage": "https://www.alessandrozavala.com/blog/como-crear-un-sitemap-y-robots-txt/", "inLanguage": "es-MX"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.alessandrozavala.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.alessandrozavala.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Cómo crear un sitemap y un robots.txt para tu sitio", "item": "https://www.alessandrozavala.com/blog/como-crear-un-sitemap-y-robots-txt/"}]}]}</script></head><body>
+<header class="top"><div class="wrap"><a class="logo" href="/">Alessandro<span>.</span>Zavala</a>
+<nav><a href="/blog/">Blog</a><a href="/#mis-sitios">Mis sitios</a><a href="/#podcast">Podcast</a><a href="/#instagram">Instagram</a><a href="/sobre-mi/">Sobre mí</a><a href="/#temas">Temas</a></nav></div></header>
+<main><article class="post"><div class="crumbs"><a href="/">Inicio</a> › <a href="/blog/">Blog</a> › Desarrollo web</div>
+<h1>Cómo crear un sitemap y un robots.txt para tu sitio</h1><p class="dek">Qué son, para qué sirven, cómo se escriben y cómo enviarlos a Google Search Console. Incluye ejemplos listos para copiar y errores que debes evitar.</p>
+<div class="meta"><span>Por <b>César Alessandro Zavala</b></span><span><time datetime="2026-11-25T01:30:00-06:00">25 de noviembre de 2026</time></span><span>6 min de lectura</span></div>
+<figure><img src="/img/blog/como-crear-un-sitemap-y-robots-txt.jpg" alt="Cómo crear un sitemap y un robots.txt para tu sitio" width="1200" height="675"></figure>
+<div class="content"><p>Hay dos archivos pequeños que todo sitio web debería tener y que casi nadie revisa: el <strong>sitemap</strong> y el <strong>robots.txt</strong>. Son como el índice de un libro y el letrero de la entrada de un edificio. No hacen que tu sitio posicione por sí solos, pero ayudan a que Google lo recorra bien. En esta guía te explico cómo crearlos y revisarlos.</p>
+<h2 id="qu-es-un-sitemap">Qué es un sitemap</h2>
+<p>Un sitemap es un archivo, normalmente llamado sitemap.xml, que contiene la lista de las páginas de tu sitio que quieres que los buscadores conozcan. Le dice a Google: "estas son mis páginas importantes y esta es la fecha en que cambiaron por última vez".</p>
+<p>Google puede descubrir tus páginas siguiendo enlaces, pero el sitemap le ayuda a encontrarlas más rápido, sobre todo:</p>
+<ul><li>En sitios nuevos con pocos enlaces externos.</li><li>En sitios con muchas páginas.</li><li>Cuando publicas contenido nuevo con frecuencia.</li><li>Cuando hay páginas que no están bien enlazadas desde el menú.</li></ul>
+<h2 id="c-mo-se-ve-un-sitemap">Cómo se ve un sitemap</h2>
+<p>Es un archivo de texto con formato XML:</p>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://www.tunegocio.com/&lt;/loc&gt;
+    &lt;lastmod&gt;2026-11-25&lt;/lastmod&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://www.tunegocio.com/servicios/&lt;/loc&gt;
+    &lt;lastmod&gt;2026-11-20&lt;/lastmod&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://www.tunegocio.com/blog/como-elegir-un-taller/&lt;/loc&gt;
+    &lt;lastmod&gt;2026-11-18&lt;/lastmod&gt;
+  &lt;/url&gt;
+&lt;/urlset&gt;</code></pre>
+<p>Cada página va dentro de una etiqueta url, con su dirección completa en loc y su fecha de última modificación en lastmod.</p>
+<h3>Reglas importantes</h3>
+<ul><li>Usa URLs completas, con https y la versión de dominio que elegiste, con o sin www.</li><li>Incluye sólo páginas que quieres que aparezcan en Google: nada de páginas privadas, de prueba o con noindex.</li><li>Incluye sólo páginas que funcionan. Nada de URLs que redirigen o dan error.</li><li>Actualiza lastmod sólo cuando la página cambió de verdad.</li><li>Un sitemap puede tener hasta 50,000 URLs. Si tienes más, se divide en varios con un índice de sitemaps.</li></ul>
+<h3>Sitemaps para noticias</h3>
+<p>Si publicas noticias, existe un sitemap especial para Google News con las páginas de los últimos dos días e información adicional como el título y la fecha de publicación. Es útil para medios digitales.</p>
+<h2 id="c-mo-crear-tu-sitemap">Cómo crear tu sitemap</h2>
+<h3>Si usas una plataforma</h3>
+<p>WordPress con un plugin de SEO, Shopify y la mayoría de los constructores generan el sitemap automáticamente. Sólo tienes que encontrar su dirección, normalmente tusitio.com/sitemap.xml, y revisar que esté bien.</p>
+<h3>Si tu sitio es estático</h3>
+<p>Tienes tres opciones:</p>
+<ul><li><strong>A mano:</strong> para sitios de pocas páginas, copia el ejemplo y agrega tus URLs.</li><li><strong>Con un generador en línea:</strong> hay herramientas que recorren tu sitio y crean el archivo.</li><li><strong>Con un script:</strong> lo mejor si publicas con frecuencia. Un programa recorre las carpetas de tu sitio y escribe el sitemap cada vez que generas el sitio.</li></ul>
+<p>En mis sitios el sitemap se genera automáticamente junto con las páginas, así nunca se queda una URL fuera. Te explico cómo automatizarlo en <a href="/blog/como-automatizar-tu-blog-con-ia-y-github-actions/">cómo automatizar tu blog con IA y GitHub Actions</a>.</p>
+<h2 id="qu-es-el-robots-txt">Qué es el robots.txt</h2>
+<p>Es un archivo de texto en la raíz de tu sitio, en tusitio.com/robots.txt, que da instrucciones a los rastreadores: qué partes pueden recorrer y cuáles no. También indica dónde está tu sitemap.</p>
+<p>El robots.txt más sencillo, que permite todo y señala el sitemap:</p>
+<pre><code>User-agent: *
+Allow: /
+
+Sitemap: https://www.tunegocio.com/sitemap.xml</code></pre>
+<ul><li><strong>User-agent:</strong> a qué rastreador aplica la regla. El asterisco significa todos.</li><li><strong>Allow:</strong> qué se permite rastrear.</li><li><strong>Disallow:</strong> qué no se debe rastrear.</li><li><strong>Sitemap:</strong> la dirección completa de tu sitemap.</li></ul>
+<h3>Cuándo bloquear algo</h3>
+<p>Podrías bloquear carpetas que no aportan nada a los buscadores, como áreas de administración, resultados de búsqueda interna o carpetas de pruebas:</p>
+<pre><code>User-agent: *
+Disallow: /admin/
+Disallow: /pruebas/
+Allow: /
+
+Sitemap: https://www.tunegocio.com/sitemap.xml</code></pre>
+<h2 id="un-malentendido-muy-com-n">Un malentendido muy común</h2>
+<p>El robots.txt <strong>no sirve para ocultar páginas de Google</strong>. Bloquear una URL en robots.txt impide que el rastreador la lea, pero si otros sitios la enlazan, puede aparecer en los resultados sin descripción. Para que una página no aparezca en Google, usa la etiqueta meta robots con noindex en esa página y <strong>no</strong> la bloquees en robots.txt, porque si la bloqueas Google no podrá leer el noindex.</p>
+<p>Y algo aún más importante: el robots.txt es público. Cualquiera puede leerlo. Nunca lo uses para "esconder" información privada; protege esa información con contraseña.</p>
+<h2 id="errores-que-pueden-hundir-tu-sitio">Errores que pueden hundir tu sitio</h2>
+<ul><li><strong>Disallow: / en producción.</strong> Bloquea todo tu sitio. Pasa cuando se copia el robots.txt del sitio de pruebas.</li><li><strong>Bloquear CSS o JavaScript.</strong> Google necesita esos archivos para ver tu página como la ve un usuario.</li><li><strong>Sitemap con URLs viejas o rotas.</strong> Confunde al buscador y desperdicia rastreo.</li><li><strong>Sitemap con la versión equivocada del dominio.</strong> Por ejemplo, URLs con http cuando tu sitio usa https.</li><li><strong>No actualizar el sitemap al publicar.</strong> Las páginas nuevas tardan más en descubrirse.</li></ul>
+<h2 id="c-mo-enviar-tu-sitemap-a-google">Cómo enviar tu sitemap a Google</h2>
+<ul><li>Entra a Google Search Console y selecciona tu propiedad.</li><li>Ve a la sección de sitemaps.</li><li>Escribe la dirección de tu sitemap, por ejemplo sitemap.xml, y envíalo.</li><li>Revisa unos días después que el estado diga que se procesó correctamente y cuántas URLs se descubrieron.</li></ul>
+<p>Si después agregas páginas, no necesitas volver a enviarlo: Google lo revisa periódicamente. Pero sí conviene revisar los informes de indexación para detectar problemas.</p>
+<h3>Bing y otros buscadores</h3>
+<p>Bing tiene su propia herramienta, Bing Webmaster Tools, donde también puedes enviar el sitemap. Además, la línea Sitemap en tu robots.txt ayuda a que cualquier buscador lo encuentre.</p>
+<h2 id="c-mo-revisar-que-todo-est-bien">Cómo revisar que todo esté bien</h2>
+<ul><li>Abre tusitio.com/robots.txt en el navegador y lee cada línea.</li><li>Abre tusitio.com/sitemap.xml y revisa que aparezcan tus páginas importantes.</li><li>Da clic en algunas URLs del sitemap para confirmar que funcionan.</li><li>Usa la herramienta de inspección de URL de Search Console para verificar que una página no esté bloqueada.</li></ul>
+<p>Puedes pedirle a una herramienta de IA que revise tu robots.txt y tu sitemap: pega el contenido y pregunta si hay errores o URLs que no deberían estar. Encuentras más revisiones en <a href="/blog/seo-tecnico-basico-para-tu-sitio-web/">SEO técnico básico para tu sitio web</a>.</p>
+<h2 id="sitemaps-de-im-genes-y-videos">Sitemaps de imágenes y videos</h2>
+<p>Además del sitemap de páginas, puedes indicar a Google las imágenes y videos importantes de tu sitio, ya sea dentro del mismo sitemap o en sitemaps separados. Es útil si las imágenes son parte importante de tu negocio, como en un catálogo de productos o un portafolio, porque ayuda a que aparezcan en la búsqueda de imágenes.</p>
+<h2 id="un-ejemplo-de-script-sencillo">Un ejemplo de script sencillo</h2>
+<p>Si tu sitio es estático y cada página vive en su propia carpeta con un index.html, un script puede recorrer las carpetas y escribir el sitemap. La lógica es:</p>
+<ul><li>Recorrer todas las carpetas del sitio.</li><li>Por cada archivo index.html, construir la URL completa a partir de la ruta.</li><li>Excluir carpetas de pruebas o páginas con noindex.</li><li>Escribir el archivo sitemap.xml con todas las URLs y la fecha.</li></ul>
+<p>Puedes pedirle a la IA que te escriba ese script en Python o JavaScript describiendo la estructura de tu sitio. Y si lo conectas a un workflow, el sitemap se actualiza solo cada vez que publicas.</p>
+<h2 id="sitemap-y-robots-txt-para-ia">Sitemap y robots.txt para IA</h2>
+<p>Algunos rastreadores de empresas de inteligencia artificial respetan las reglas del robots.txt con sus propios nombres de User-agent. Si quieres permitir o limitar el uso de tu contenido por esos rastreadores, puedes agregar reglas específicas para ellos. Es una decisión de negocio: permitirlos puede ayudar a que tu marca aparezca en respuestas de asistentes; bloquearlos limita ese uso.</p>
+<h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+<h3>¿Es obligatorio tener sitemap?</h3>
+<p>No, pero es muy recomendable. Para sitios pequeños y bien enlazados, Google puede encontrar todo sin él; aun así, ayuda.</p>
+<h3>¿El sitemap hace que posicione mejor?</h3>
+<p>No directamente. Ayuda a que Google descubra e indexe tus páginas. El posicionamiento depende del contenido y muchas otras señales.</p>
+<h3>¿Cada cuánto debo actualizarlo?</h3>
+<p>Cada vez que agregues, quites o cambies páginas importantes. Lo ideal es que se actualice automáticamente.</p>
+<h2 id="conclusi-n">Conclusión</h2>
+<p>El sitemap y el robots.txt son dos archivos pequeños con un trabajo importante: guiar a los buscadores por tu sitio. Créalos, revísalos una vez al mes y envía el sitemap a Search Console. Son diez minutos de trabajo que evitan problemas que pueden costarte meses de visibilidad.</p></div>
+<div class="author"><img class="av" src="/img/cesar-zavala-avatar.jpg" alt="César Zavala" width="64" height="64" loading="lazy"><p><b>César Alessandro Zavala</b><br>Certificado por Meta y +8 años como consultor de Amazon. Director de Estudio E-commerce y de El Diario de Tamaulipas. Llevé Siafu al #1 en sillas de oficina de Amazon México y trabajo con marcas en Amazon, Mercado Libre y Shopify. <a href="/sobre-mi/">Conóceme</a> · Más contenido especializado en <a href="https://estudioecommerce.com.mx/">Estudio E-commerce</a>.<span class="cbtns"><a href="https://www.linkedin.com/in/cesar-alessandro-zavala-ab7b75b2" rel="noopener">LinkedIn ↗</a><a href="https://wa.me/525541920887?text=Hola%20C%C3%A9sar%2C%20vi%20tu%20sitio%20y%20quiero%20platicar%20de%20mi%20negocio" rel="noopener">WhatsApp →</a></span></p></div>
+</article><section class="more"><h2>Sigue leyendo</h2><div class="grid"><article class="card"><a href="/blog/ssl-https-como-activarlo/"><img src="/img/blog/ssl-https-como-activarlo.jpg" alt="SSL y HTTPS: qué son y cómo activarlos en tu sitio" loading="lazy" width="720" height="405"><div><span class="tag">Desarrollo web · 6 min</span><h3>SSL y HTTPS: qué son y cómo activarlos en tu sitio</h3><p>Por qué tu sitio dice &#x27;no seguro&#x27;, cómo activar el certificado SSL gratis en tu hosting, cómo forzar HTTPS sin romper nada y qué revisar después.</p></div></a></article><article class="card"><a href="/blog/perdi-100000-pesos-importando-de-china/"><img src="/img/blog/perdi-100000-pesos-importando-de-china.jpg" alt="Perdí $100,000 pesos importando de China: los costos que no calculé" loading="lazy" width="720" height="405"><div><span class="tag">Costos · 3 min</span><h3>Perdí $100,000 pesos importando de China: los costos que no calculé</h3><p>Mi primera marca propia salió mal por no calcular todos los costos de importar y vender en Amazon. Te cuento qué pasó y la lista completa de costos que tienes que sumar antes de comprar.</p></div></a></article><article class="card"><a href="/blog/por-que-emprender/"><img src="/img/blog/por-que-emprender.jpg" alt="Por qué emprender: las razones que sí valen la pena (y las que no)" loading="lazy" width="720" height="405"><div><span class="tag">Empezar · 3 min</span><h3>Por qué emprender: las razones que sí valen la pena (y las que no)</h3><p>Emprender no es para escapar de un jefe. Te cuento las razones que de verdad sostienen un negocio cuando las cosas se ponen difíciles, y las que suelen terminar en frustración.</p></div></a></article></div></section></main><footer><div class="wrap"><p><b style="color:#fff">César Alessandro Zavala</b> · Emprendimiento, publicidad digital y e-commerce.</p>
+<p>Sitios aliados: <a href="https://eldiariodetamaulipas.com/">El Diario de Tamaulipas</a> · <a href="https://estudioecommerce.com.mx/">Estudio E-commerce</a> · <a href="https://chubcluburger.com/">Chub Club Burger</a></p>
+<p><a href="https://www.instagram.com/alessandroecomm/">Instagram</a> · <a href="https://www.linkedin.com/in/cesar-alessandro-zavala-ab7b75b2">LinkedIn</a> · <a href="/blog/">Blog</a> · <a href="https://eldiariodetamaulipas.com/herramientas/">Calculadoras</a></p><p>© 2026 César Alessandro Zavala.</p></div></footer><a class="wa" href="https://wa.me/525541920887?text=Hola%20C%C3%A9sar%2C%20vi%20tu%20sitio%20y%20quiero%20platicar%20de%20mi%20negocio" rel="noopener" aria-label="Escríbeme por WhatsApp">💬 Platiquemos</a></body></html>
