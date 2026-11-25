@@ -17,10 +17,10 @@ RewriteEngine On
 # Bloquear accesos a restos de WordPress
 RewriteRule ^(wp-login\.php|xmlrpc\.php|wp-admin) - [F,L]
 # Artículos técnicos movidos a Estudio E-commerce
-Redirect 301 /blog/facebook-ads-para-principiantes/ https://estudioecommerce.com.mx/blog/facebook-ads-para-principiantes/
-Redirect 301 /blog/como-hacer-publicidad-para-tu-negocio/ https://estudioecommerce.com.mx/blog/como-hacer-publicidad-para-tu-negocio/
-Redirect 301 /blog/que-son-las-campanas-ugc-y-como-empezar/ https://estudioecommerce.com.mx/blog/que-son-las-campanas-ugc-y-como-empezar/
-Redirect 301 /blog/como-vender-en-shopify-primeros-pasos/ https://estudioecommerce.com.mx/blog/como-vender-en-shopify-primeros-pasos/
-Redirect 301 /blog/como-elegir-un-producto-para-vender-en-amazon/ https://estudioecommerce.com.mx/blog/como-elegir-un-producto-para-vender-en-amazon/
-Redirect 301 /blog/como-vender-en-amazon-y-mercado-libre/ https://estudioecommerce.com.mx/blog/como-vender-en-amazon-y-mercado-libre/
+Redirect 301 /blog/facebook-ads-para-principiantes/ https://estudioecommerce.com.mx/servicios/meta-ads/
+Redirect 301 /blog/como-hacer-publicidad-para-tu-negocio/ https://estudioecommerce.com.mx/blog/presupuesto-meta-ads-ecommerce/
+Redirect 301 /blog/que-son-las-campanas-ugc-y-como-empezar/ https://estudioecommerce.com.mx/blog/creadores-ugc-para-meta-ads/
+Redirect 301 /blog/como-vender-en-shopify-primeros-pasos/ https://estudioecommerce.com.mx/blog/desarrollo-tienda-shopify/
+Redirect 301 /blog/como-elegir-un-producto-para-vender-en-amazon/ https://estudioecommerce.com.mx/blog/comisiones-amazon-mexico-margen/
+Redirect 301 /blog/como-vender-en-amazon-y-mercado-libre/ https://estudioecommerce.com.mx/blog/amazon-vs-mercado-libre-vs-shopify/
 Redirect 301 /blog/roas-acos-y-tacos-explicados-para-principiantes/ https://estudioecommerce.com.mx/blog/tacos-acos-roas-amazon/
