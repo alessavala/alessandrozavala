@@ -1,0 +1,8 @@
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://www.alessandrozavala.com%{REQUEST_URI} [L,R=301]
+# Bloquear accesos a restos de WordPress
+RewriteRule ^(wp-login\.php|xmlrpc\.php|wp-admin) - [F,L]
